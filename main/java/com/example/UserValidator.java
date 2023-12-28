@@ -37,7 +37,7 @@ public class UserValidator {
         System.out.println("Enter the Email ID:");
         
         String email = sc.nextLine();
-        String valid_email = "^[a-zA-Z0-9._]+@[a-zA-Z]+\\.[a-zA-Z]{2,}$";
+        String valid_email = "^[a-zA-Z0-9][a-zA-Z0-9._-]*@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(.[a-zA-Z]{2,})*$";
         valid = patternValidator(email, valid_email);
         System.out.println("Valid Email: " + valid);
         if(!valid)

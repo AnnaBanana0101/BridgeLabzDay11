@@ -60,7 +60,7 @@ public class UserValidator {
         System.out.println("Enter the Password:");
         
         String pass = sc.nextLine();
-        String valid_pass = "[A-Z]+[0-9]+.{6,}";
+        String valid_pass = "[A-Z]+[0-9]+[?@#$%^&*_=+][a-zA-Z0-9]{5,}";
         valid = patternValidator(pass, valid_pass);
         System.out.println("Valid Password: " + valid);
         if(!valid)

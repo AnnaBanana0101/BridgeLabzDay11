@@ -56,7 +56,7 @@ public class UserValidator {
         System.out.println("");
 
         //Password
-        //Rule 1 + 2 + 3
+        //Rule 1 + 2 + 3 + 4
         System.out.println("Enter the Password:");
         
         String pass = sc.nextLine();

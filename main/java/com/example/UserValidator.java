@@ -7,7 +7,7 @@ public class UserValidator {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-
+        boolean valid;
         //First name
         System.out.println("Enter the first name:");
 
@@ -16,13 +16,13 @@ public class UserValidator {
 
         // Pattern pattern = Pattern.compile(valid_first_name);
         // Matcher matcher = pattern.matcher(first_name);
-        boolean valid = patternValidator(first_name, valid_first_name);
+        valid = patternValidator(first_name, valid_first_name);
         System.out.println("Valid First Name: " + valid);
         System.out.println("");
         if (!valid) 
             return;
 
-        //Last name
+        // //Last name
         System.out.println("Enter the last name:");
 
         String last_name = sc.nextLine();
@@ -31,6 +31,18 @@ public class UserValidator {
         System.out.println("Valid Last Name: " + patternValidator(last_name, valid_last_name));
         if(!valid)
             return;
+        System.out.println("");
+
+        //Email ID
+        System.out.println("Enter the Email ID:");
+        
+        String email = sc.nextLine();
+        String valid_email = "^[a-zA-Z0-9._]+@[a-zA-Z]+\\.[a-zA-Z]{2,}$";
+        valid = patternValidator(email, valid_email);
+        System.out.println("Valid Email: " + patternValidator(email, valid_email));
+        if(!valid)
+            return;
+
 
         
     }

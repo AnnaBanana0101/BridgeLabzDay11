@@ -53,8 +53,18 @@ public class UserValidator {
         System.out.println("Valid Email: " + valid);
         if(!valid)
             return;
+        System.out.println("");
 
-
+        //Password
+        //Rule 1
+        System.out.println("Enter the Password:");
+        
+        String pass1 = sc.nextLine();
+        String valid_pass1 = ".{8,}";
+        valid = patternValidator(pass1, valid_pass1);
+        System.out.println("Valid Password Length: " + valid);
+        if(!valid)
+            return;
 
         
     }

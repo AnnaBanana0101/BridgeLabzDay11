@@ -39,9 +39,21 @@ public class UserValidator {
         String email = sc.nextLine();
         String valid_email = "^[a-zA-Z0-9._]+@[a-zA-Z]+\\.[a-zA-Z]{2,}$";
         valid = patternValidator(email, valid_email);
-        System.out.println("Valid Email: " + patternValidator(email, valid_email));
+        System.out.println("Valid Email: " + valid);
         if(!valid)
             return;
+        System.out.println("");
+
+        //Mobile No
+        System.out.println("Enter the Mobile No:");
+        
+        String mobile_no = sc.nextLine();
+        String valid_mobile_no = "^91\\s[0-9]{10}$";
+        valid = patternValidator(mobile_no, valid_mobile_no);
+        System.out.println("Valid Email: " + valid);
+        if(!valid)
+            return;
+
 
 
         

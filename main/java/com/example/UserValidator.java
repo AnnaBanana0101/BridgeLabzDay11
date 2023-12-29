@@ -61,14 +61,11 @@ public class UserValidator {
         
         String pass = sc.nextLine();
         //String valid_pass = "[A-Z]+[0-9]+[?@#$%^&*_=+][a-zA-Z0-9]{5,}";
-        String valid_pass = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]{1}).{8,}$";
+        String valid_pass = "^(?=.*[A-Z])(?=.*[0-9])(?=[a-zA-Z0-9]*[^a-zA-Z0-9][a-zA-Z0-9]*$).{8,}";
         valid = patternValidator(pass, valid_pass);
         System.out.println("Valid Password: " + valid);
         if(!valid)
-            return;
-
-        
-        
+            return;  
     }
 
     public static boolean patternValidator(String text, String valid_text)

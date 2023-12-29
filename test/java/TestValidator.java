@@ -4,6 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class TestValidator {
     
@@ -100,6 +102,16 @@ public class TestValidator {
 
         Pattern pattern = Pattern.compile(valid_pass);
         Matcher matcher = pattern.matcher(pass);
+        assertTrue(matcher.matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"anika@gmail.com", "abcgamil.com", "123@12", "abc@gmal.com.au"})
+    public void paramValidateEmail(String str)
+    {
+        String valid_email = "^[a-zA-Z0-9][a-zA-Z0-9._-]*@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(.[a-zA-Z]{2,})*$";
+        Pattern pattern = Pattern.compile(valid_email);
+        Matcher matcher = pattern.matcher(str);
         assertTrue(matcher.matches());
     }
 }
